@@ -1,0 +1,6 @@
+---
+/etc/recommendation_api/config.yaml:
+  template: config.yaml.j2
+  erb_syntax: True
+  remote_vars: /etc/recommendation_api/config-vars.yaml
+

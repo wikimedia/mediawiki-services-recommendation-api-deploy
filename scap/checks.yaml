@@ -1,0 +1,14 @@
+checks:
+  endpoints:
+    type: nrpe
+    stage: restart_service
+    command: check_endpoints_recomendation_api
+  depool:
+    type: command
+    stage: promote
+    command: depool-recomendation_api
+  repool:
+    type: command
+    stage: restart_service
+    command: pool-recomendation_api
+
