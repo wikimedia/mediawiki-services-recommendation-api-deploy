@@ -81,6 +81,11 @@ services:
         query: '{{ default(request.query, {}) }}'
         headers: '{{request.headers}}'
         body: '{{request.body}}'
+      mysql_conn:
+        host: <%= dbhost %>
+        name: <%= dbname %>
+        user: <%= dbuser %>
+        pass: <%= dbpass %>
       wdqsapi_req:
         method: 'post'
         uri: <%= wdqs_uri %>/sparql
