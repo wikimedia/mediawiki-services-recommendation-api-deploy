@@ -82,10 +82,14 @@ services:
         headers: '{{request.headers}}'
         body: '{{request.body}}'
       mysql_conn:
+        limit: 30
         host: <%= dbhost %>
         name: <%= dbname %>
         user: <%= dbuser %>
         pass: <%= dbpass %>
+      mysql_tables:
+        language: language
+        article_recommendation: article_recommendation
       wdqsapi_req:
         method: 'post'
         uri: <%= wdqs_uri %>/sparql
@@ -126,4 +130,24 @@ services:
             gsrlimit: 1
             gsrsearch: '{{params.seed}}'
             gsrprop: ''
+        wikidata:
+          domain: '{{params.domain}}'
+          parameters:
+            format: json
+            formatversion: 2
+            action: query
+            prop: pageprops
+            ppprop: wikibase_item
+            titles: '{{params.title}}'
+      article:
+        # key is the target language, values are source languages
+        translation_models:
+          es:
+            - en
+          fa:
+            - en
+          ru:
+            - en
+          uz:
+            - ru
 
