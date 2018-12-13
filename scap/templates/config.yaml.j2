@@ -88,8 +88,8 @@ services:
         user: <%= dbuser %>
         pass: <%= dbpass %>
       mysql_tables:
-        language: language
-        article_recommendation: article_recommendation
+        language: language_20181130
+        normalized_rank: normalized_rank_20181130
       wdqsapi_req:
         method: 'post'
         uri: <%= wdqs_uri %>/sparql
@@ -142,12 +142,13 @@ services:
       article:
         # key is the target language, values are source languages
         translation_models:
+          en:
+            - de
           es:
             - en
           fa:
             - en
-          ru:
-            - en
           uz:
+            - en
             - ru
 
