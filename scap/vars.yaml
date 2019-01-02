@@ -22,3 +22,4 @@ dbhost: localhost
 dbname: recommendationapi
 dbuser: recommendationapiservice
 dbpass: dbpass
+wikidata_domain: www.wikidata.org
