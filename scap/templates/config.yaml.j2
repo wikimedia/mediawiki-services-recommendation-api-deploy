@@ -82,7 +82,7 @@ services:
         headers: '{{request.headers}}'
         body: '{{request.body}}'
       mysql_conn:
-        limit: 30
+        limit: 2
         host: <%= dbhost %>
         name: <%= dbname %>
         user: <%= dbuser %>
