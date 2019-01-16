@@ -1,9 +1,11 @@
 # Number of worker processes to spawn.
 # Set to 0 to run everything in a single process without clustering.
 # Use 'ncpu' to run as many workers as there are CPU units
-# For recommendation API we decrease the number of workers 2 times
-# in order to save on connections to MySQL
-num_workers: <%= num_workers %> / 2
+# For recommendation API we decrease the number of workers to 2
+# in order to save on connections to MySQL. We only have 50 connections
+# to mySQL, 2 workers per node multiplied by 2 connections per worker
+# multiplied by 10 nodes would guarantee we are within limits.
+num_workers: 2
 
 # Log error messages and gracefully restart a worker if v8 reports that it
 # uses more heap (note: not RSS) than this many mb.
