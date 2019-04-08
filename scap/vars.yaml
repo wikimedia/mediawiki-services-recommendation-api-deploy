@@ -4,9 +4,8 @@ worker_heap_limit_mb: 250
 worker_heartbeat_timeout: 7500
 # log-related variables
 log_name: recommendation_api
-logstash_host: localhost
-logstash_port: 12201
 log_file: /tmp/recommendation_api.log
+rsyslog_port: 10514
 # metrics
 metrics_name: recommendation_api
 metrics_host: localhost
